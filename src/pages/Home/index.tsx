@@ -5,6 +5,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import { useTranslation } from "react-i18next";
+import { kebabCase } from "lodash";
 
 const Home = () => {
   const { t } = useTranslation("app");
@@ -57,8 +58,8 @@ const Home = () => {
           {t("home.sidenote")}
         </Typography>
         <List>
-          {issues.map((issue) => (
-            <ListItem>
+          {issues.map((issue, index) => (
+            <ListItem key={`${index}-${kebabCase(issue.title)}`}>
               <Typography variant="h5" sx={{ p: 2 }}>
                 {issue.icon}
               </Typography>
