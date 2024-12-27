@@ -59,14 +59,13 @@ const AppHeader = React.forwardRef((props: AppHeaderProps, ref) => {
   return (
     <AppBar ref={ref} position="fixed" sx={{ width: "100vw" }}>
       <Toolbar sx={{ background: "#08140C 0% 0% no-repeat padding-box" }}>
-        <Box sx={{ width: "100%", flexDirection: "row", display: "flex" }}>
+        <Box sx={{ width: "100%", display: "flex", justifyContent: "space-between" }}>
           <Box>
             <Typography variant="h6" component="div" color="primary">
               {countdownMinutes}:{countdownSeconds}
             </Typography>
           </Box>
-          <Box sx={{ width: 20, height: 20, flex: 1 }} />
-          <Box sx={{ flex: 2 }}>
+          <Box>
             <Typography
               sx={{
                 ...typoStyle,
@@ -87,7 +86,7 @@ const AppHeader = React.forwardRef((props: AppHeaderProps, ref) => {
               {pageTitle.toLocaleUpperCase()}
             </Typography>
           </Box>
-          <Box sx={{ flex: 1, justifyContent: "flex-end", display: "flex" }}>
+          <Box sx={{ width: 40 }}>
             {user && user.eMail && (
               <Grow in={Boolean(user && user.eMail)}>
                 <AvatarMenu user={user} />
