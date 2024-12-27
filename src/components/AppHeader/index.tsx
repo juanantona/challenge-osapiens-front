@@ -1,7 +1,7 @@
 import { Grow, Box, Theme, Toolbar, Typography } from "@mui/material";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import { styled, useTheme } from "@mui/material/styles";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { User } from "../../api/services/User/store";
 import AvatarMenu from "../AvatarMenu";
@@ -42,11 +42,19 @@ const AppHeader = React.forwardRef((props: AppHeaderProps, ref) => {
   const countdownMinutes = `${~~(countdown / 60)}`.padStart(2, "0");
   const countdownSeconds = (countdown % 60).toFixed(0).padStart(2, "0");
 
+  const intervalRef = useRef<NodeJS.Timeout>();
+
   useEffect(() => {
-    setInterval(() => {
+    intervalRef.current = setInterval(() => {
       setCount((c) => c + 1);
     }, 1000);
+    
+    return () => clearInterval(intervalRef.current);
   }, []);
+
+  useEffect(() => {
+    if (countdown === 0) clearInterval(intervalRef.current);
+  }, [countdown]);
 
   return (
     <AppBar ref={ref} position="fixed" sx={{ width: "100vw" }}>
