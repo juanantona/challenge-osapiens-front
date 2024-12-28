@@ -30,5 +30,11 @@
         "description": "Bitte fügen Sie ein Sprachwahlfeld in der App-Leiste hinzu, um die UI-Sprache zwischen Englisch und Deutsch zu wechseln."
       }
     }
+  },
+  "appHeader": {
+    "languageSelector": {
+      "english": "Englisch",
+      "german": "Deutsch"
+    }
   }
 }

@@ -1,12 +1,11 @@
-import { Grow, Box, Theme, Toolbar, Typography, FormControl, NativeSelect } from "@mui/material";
+import { Grow, Box, Theme, Toolbar, Typography } from "@mui/material";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import { styled, useTheme } from "@mui/material/styles";
-import { makeStyles } from "@mui/styles";
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { User } from "../../api/services/User/store";
 import AvatarMenu from "../AvatarMenu";
-import MuiLanguageIcon from '@mui/icons-material/Language';
+import { LanguageSelector } from "../../components/LanguageSelector";
 
 interface AppBarProps extends MuiAppBarProps {
   theme?: Theme;
@@ -31,22 +30,10 @@ const AppBar = styled(MuiAppBar)<AppBarProps>(({ theme }) => ({
   height: theme.tokens.header.height
 }));
 
-const useStyles = makeStyles(() => ({
-  select: {
-    paddingTop: 1,
-    paddingBottom: 1,
-    "&&": { paddingRight: 1 },
-  }
-}));
-
-const LanguageIcon = () => <MuiLanguageIcon color="primary" />
-
 const AppHeader = React.forwardRef<HTMLDivElement, AppHeaderProps>((props, ref) => {
   const { user, pageTitle } = props;
-  const { t, i18n } = useTranslation("app");
+  const { t } = useTranslation("app");
   const theme = useTheme();
-
-  const classes = useStyles();
 
   const [count, setCount] = useState(0);
   const hours = 1;
@@ -101,24 +88,7 @@ const AppHeader = React.forwardRef<HTMLDivElement, AppHeaderProps>((props, ref) 
             </Typography>
           </Box>
           <Box sx={{ display: 'flex' }}>
-            <Box sx={{ mr: 4 }}>
-              <FormControl>
-                <NativeSelect
-                  disableUnderline
-                  id="language-selector"
-                  IconComponent={LanguageIcon}
-                  defaultValue={i18n.language}
-                  classes={{ root: classes.select }}
-                  sx={{ color: theme.palette.primary.main }}
-                  onChange={(event) => {
-                    i18n.changeLanguage(event.target.value);
-                  }}
-                >
-                  <option value={'en'}>English</option>
-                  <option value={'de'}>German</option>
-                </NativeSelect>
-              </FormControl>
-            </Box>
+            <LanguageSelector />
             <Box sx={{ width: 40 }}>
               {user && user.eMail && (
                 <Grow in={Boolean(user && user.eMail)}>

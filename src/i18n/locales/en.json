@@ -30,5 +30,11 @@
         "description": "Please add a language select control in the app bar to swicth the UI language between english and german."
       }
     }
+  },
+  "appHeader": {
+    "languageSelector": {
+      "english": "English",
+      "german": "German"
+    }
   }
 }
