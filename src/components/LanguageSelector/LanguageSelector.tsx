@@ -7,11 +7,8 @@ import MuiLanguageIcon from '@mui/icons-material/Language';
 
 const useStyles = makeStyles(() => ({
   select: {
-    paddingTop: 1,
-    paddingBottom: 1,
-    paddingRight: 1,
-    "&&": { 
-      paddingRight: 1 
+    "& #language-selector": { 
+      paddingRight: 8 
     }
   }
 }));
