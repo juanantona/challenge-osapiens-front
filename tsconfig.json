@@ -9,6 +9,7 @@
             "dom",
             "esnext"
         ],
-        "jsx": "react-jsx"
+        "jsx": "react-jsx",
+        "resolveJsonModule": true,
     }
 }

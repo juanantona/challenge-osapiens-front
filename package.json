@@ -13,6 +13,7 @@
     "@emotion/styled": "11.6.0",
     "@mdi/js": "6.5.95",
     "@mdi/react": "1.5.0",
+    "@mui/icons-material": "^5.4.2",
     "@mui/material": "5.4.2",
     "@mui/styles": "5.4.2",
     "@types/lodash": "4.14.178",
@@ -25,11 +26,12 @@
     "react-dom": "17.0.2",
     "react-i18next": "11.15.4",
     "react-router-dom": "5.2.0",
-    "react-scripts": "4.0.3"
+    "react-scripts": "^5.0.1"
   },
   "devDependencies": {
     "@types/react": "17.0.20",
     "@types/react-dom": "17.0.9",
+    "@types/react-router-dom": "^5.3.3",
     "typescript": "4.4.2"
   },
   "scripts": {

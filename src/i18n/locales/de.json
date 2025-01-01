@@ -1,1 +1,40 @@
-{}
+{
+  "logout": "Abmelden",
+  "appTitle": "Supplier OS Anwendung",
+  "routes": {
+    "/home": "Bug Bounty Herausforderung"
+  },
+  "home": {
+    "welcome": "Willkommen!",
+    "intro": "Dies ist eine Demoanwendung mit einigen Fehlern und Problemen, bei der wir hoffen, dass Sie sie finden können. 😃 Hier ist die Liste der <b>bekannten</b> Probleme:",
+    "sidenote": "Alle Fehler haben unterschiedliche Schwierigkeitsgrade, und alle sind ziemlich häufige (reale Probleme für jeden React-Entwickler). Um alle offenen Punkte zu lösen, sind verschiedene Fähigkeiten erforderlich: Googeln, Erfahrung, Lesen von Dokumentationen und Fehlermeldungen, Kreativität und analytisches Denken.",
+    "issues": {
+      "bug1": {
+        "title": "Konsolenfehler: Warnung: Jedes Kind in einer Liste sollte ein eindeutiges \"key\"-Attribut haben.",
+        "description": "Wir hoffen, Sie finden heraus, was diesen Fehler verursacht, da er störend ist."
+      },
+      "bug2": {
+        "title": "Das Wort \"bekannten\" sollte im Einführungstext fett angezeigt werden.",
+        "description": "Wenn Sie eine Lösung implementieren, stellen Sie bitte sicher, dass Sie den i18n-Text nicht ändern."
+      },
+      "bug3": {
+        "title": "Benutzeravatar in der App-Leiste fehlt, obwohl der Benutzer beim Start der App korrekt geladen werden sollte.",
+        "description": "Beim Start der App laden wir das aktuelle Benutzerobjekt über einen MobX-Store, aber aus irgendeinem Grund wird der Benutzeravatar oben rechts in der App-Leiste nicht angezeigt. Achtung: Beim Lösen dieses Problems könnten Sie mit einem zweiten Fehler konfrontiert werden."
+      },
+      "bug4": {
+        "title": "Optional: Countdown funktioniert manchmal nicht (schwer zu reproduzieren).",
+        "description": "Einige Entwickler erwähnten, dass sich der Countdown im App-Header manchmal seltsam verhält, aber leider konnten sie diesen Fehler nicht zuverlässig reproduzieren. Vielleicht finden Sie die Ursache."
+      },
+      "bonusTrack": {
+        "title": "Optional: Es wäre großartig, die Sprache wechseln zu können.",
+        "description": "Bitte fügen Sie ein Sprachwahlfeld in der App-Leiste hinzu, um die UI-Sprache zwischen Englisch und Deutsch zu wechseln."
+      }
+    }
+  },
+  "appHeader": {
+    "languageSelector": {
+      "english": "Englisch",
+      "german": "Deutsch"
+    }
+  }
+}

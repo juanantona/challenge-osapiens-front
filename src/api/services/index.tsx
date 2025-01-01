@@ -1,4 +1,4 @@
-import User from "./User";
+import * as User from "./User";
 
 const requireAllServices = (ctx: any): React.FC<any>[] => {
   const keys = ctx.keys();
@@ -7,7 +7,7 @@ const requireAllServices = (ctx: any): React.FC<any>[] => {
   return keys.map((key: string, index: number) => modules[index].StoreProvider);
 };
 
-const getAllServices = (): React.FC<any>[] => {
+const getAllServices = (): typeof User[] => {
   // return requireAllServices(
   //   require.context("api/services/", true, /index\.tsx$/)
   // );
